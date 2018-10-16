@@ -124,7 +124,12 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 function divider(arr) {
-  
+  newEven = arr.filter((even) => even % 2 === 0);
+  newOdd = arr.filter((odd) => odd % 2 !== 0);
+
+  fullArray = [newEven, newOdd];
+
+  return fullArray;
 }
 
 
@@ -146,7 +151,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr) {
+  var random = getRandomArbitrary();
+  for(var i = 0; i < arr.length; i++){
+    if(random === arr[i]){
+      return true
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -175,7 +188,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item) {
+  if(!item || !myGroceryList){
+    return [];
+  } 
+  
+  var item2BeRemoved = myGroceryList.indexOf(item);
+  console.log(myGroceryList);
+  myGroceryList.splice(item2BeRemoved, 1);
+  console.log(myGroceryList);
+  return myGroceryList;
+}
 
+function addItem(myGroceryList, item) {
+  if(!item || !myGroceryList){
+    return [];
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -185,6 +216,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function maker() {
+  var newArray = []
+  for(var i = 1; i < 216; i++){
+    newArray.push(i);
+  }
+  return newArray;
+}
 
 
 
@@ -201,6 +239,10 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+function addTen(numbers) {
+    newNumbers = numbers.map((num) => Number(num) + 10);
+    return newNumbers;
+}
 
 
 
@@ -226,7 +268,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2) {
+    if(arr1.length > arr2.length){
+      return arr1;
+    } else {
+      return arr2;
+    }
+}
 
 
 /*
@@ -238,7 +286,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+var New1 = [];
+function both(arr1, arr2) {
+  for(var i = 0; i < arr1.length; i++){
+    for(var j = 0; j < arr2.length; j++){
+      if(arr1[i] === arr2[j]){
+        New1.push(arr1[i]);
+      }
+    }
+  }
+  return New1;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -278,8 +336,12 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees[0] = tyler;
+devMountainEmployees[1] = cahlan;
+devMountainEmployees[2] = ryan;
+devMountainEmployees[3] = colt;
 
-
+console.log(devMountainEmployees.length);
 
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
@@ -287,7 +349,7 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees = devMountainEmployees.filter((person) => person !== cahlan);
 
 
 ////////// PROBLEM 13 //////////
@@ -299,7 +361,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -318,9 +380,12 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+users.user1 = user1;
+users.user2 = users.user3 = users.user1;
+user2.email = "jkhkjdh@lkdjlkfdj.com";
+user3.email = "kjdsfhkjdh@kjhjkjf.com";
 
-
-
+console.log(users);
 /*
   Now you have a very common data structure. 
   Twitter is a good use case.
