@@ -380,11 +380,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-users.user1 = user1;
-users.user2 = users.user3 = users.user1;
-user2.email = "jkhkjdh@lkdjlkfdj.com";
-user3.email = "kjdsfhkjdh@kjhjkjf.com";
+var user2 = {
+    name: 'Nick Labrum',
+    email: 'njhkjh@jkhdkj.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniteLoop'
+}
 
+var user3 = {
+    name: 'Corrine',
+    email: 'tkjdhkjdsh@lkdskjdsfh.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniteLoop'
+}
+
+users = [user1, user2, user3];
 console.log(users);
 /*
   Now you have a very common data structure. 
@@ -397,8 +407,15 @@ console.log(users);
 */
 
 //Code Here
+users.forEach(function(obj){
+    if(obj.email === "tylermcginnis33@gmail.com"){
+        var index = users.indexOf(obj);
+        users.splice(obj, 1)
+    }
+    return users;
+});
 
-
+console.log(users);
 
 /*
   The activity we just did is very much how data works in 'the real world'.
